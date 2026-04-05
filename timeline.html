@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESS — Timeline &amp; Work Breakdown</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/timeline.css"/>
+  <link rel="stylesheet" href="css/timeline-mobile.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ════════════════════════════════
+       HEADER
+  ════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a class="logo" href="index.html">
+        <img src="images/logo_KE.png" alt="Khmer Enterprise" class="logo-img"
+             onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'"/>
+        <div class="logo-icon-fb" id="logoFallback" style="display:none">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="logo-divider" aria-hidden="true"></div>
+        <div class="logo-text">
+          <span class="logo-main">Khmer Enterprise</span>
+          <span class="logo-sub">ESS · Timeline</span>
+        </div>
+      </a>
+
+      <div class="header-badge">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Project Timeline — Mar 11 → Jun 21, 2026</span>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════
+       PAGE TABS
+  ════════════════════════════════ -->
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <a class="ptab" href="index.html">
+        <i class="fa-solid fa-sitemap"></i> System Workflow
+      </a>
+      <a class="ptab active" href="timeline.html">
+        <i class="fa-solid fa-timeline"></i> Timeline &amp; WBS
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════ -->
+  <main class="tl-section">
+    <div class="container">
+
+      <!-- ── Hero ── -->
+      <div class="tl-hero reveal">
+        <div class="tl-hero-tag"><i class="fa-solid fa-calendar-range"></i> Project Timeline</div>
+        <h2>Work Breakdown &amp; <span>Milestone Tracker</span></h2>
+        <p>Full project lifecycle from research inception to final deployment — 102 days of structured development across 5 major phases and 6 work-breakdown modules.</p>
+      </div>
+
+      <!-- ── Stats ── -->
+      <div class="tl-stats reveal">
+        <div class="tl-stat">
+          <div class="tl-stat-n">102</div>
+          <div class="tl-stat-l">Total Days</div>
+        </div>
+        <div class="tl-stat">
+          <div class="tl-stat-n">5</div>
+          <div class="tl-stat-l">Phases</div>
+        </div>
+        <div class="tl-stat">
+          <div class="tl-stat-n" id="stat-elapsed">—</div>
+          <div class="tl-stat-l">Days Elapsed</div>
+        </div>
+        <div class="tl-stat">
+          <div class="tl-stat-n" id="stat-remain">—</div>
+          <div class="tl-stat-l">Days Remaining</div>
+        </div>
+      </div>
+
+      <!-- ── Overall Progress ── -->
+      <div class="tl-progress-wrap reveal">
+        <div class="tl-progress-hd">
+          <h4><i class="fa-solid fa-chart-line"></i> Overall Project Progress</h4>
+          <span class="tl-pct" id="overallPct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="mainProgressFill" data-pct="0"></div>
+        </div>
+        <div class="progress-milestones">
+          <div class="pm-dot done"    style="left:0%">    <div class="pm-dot-circle"></div><span class="pm-dot-label">Start</span></div>
+          <div class="pm-dot done"    style="left:13.5%"> <div class="pm-dot-circle"></div><span class="pm-dot-label">Design</span></div>
+          <div class="pm-dot current" style="left:25%">   <div class="pm-dot-circle"></div><span class="pm-dot-label">Prototype</span></div>
+          <div class="pm-dot"         style="left:52%">   <div class="pm-dot-circle"></div><span class="pm-dot-label">Dev</span></div>
+          <div class="pm-dot"         style="left:76%">   <div class="pm-dot-circle"></div><span class="pm-dot-label">Testing</span></div>
+          <div class="pm-dot"         style="left:100%">  <div class="pm-dot-circle"></div><span class="pm-dot-label">Final</span></div>
+        </div>
+      </div>
+
+      <!-- ── Deadline Banner ── -->
+      <div class="deadline-banner reveal">
+        <div class="db-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+        <div class="db-text">
+          <h4>Final Submission Deadline</h4>
+          <p>Project must be fully deployed, documented and submitted by <strong>21 June 2026</strong>. Internal soft deadline: 11 June 2026.</p>
+        </div>
+        <div class="db-countdown">
+          <div class="dbc-item"><div class="dbc-n" id="cd-days">—</div><div class="dbc-l">Days</div></div>
+          <div class="dbc-item"><div class="dbc-n" id="cd-hrs">—</div><div class="dbc-l">Hours</div></div>
+          <div class="dbc-item"><div class="dbc-n" id="cd-min">—</div><div class="dbc-l">Mins</div></div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════
+           TIMELINE
+      ════════════════════════════════ -->
+
+      <!-- Phase 1 badge -->
+      <div class="tl-phase-badge reveal">
+        <div class="tl-phase-badge-inner pb-green">
+          <i class="fa-solid fa-circle-check"></i> Phase 1 — Research &amp; Planning
+        </div>
+      </div>
+
+      <div class="tl-timeline">
+
+        <!-- Item 1 -->
+        <div class="tl-item tl-right">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-green"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 11 Mar 2026</div>
+            <div class="tl-status ts-done"><i class="fa-solid fa-circle-check"></i> Completed</div>
+            <h3>Project Kickoff &amp; Scope Definition</h3>
+            <p>Defined project goals, identified stakeholder needs for Cambodia's entrepreneurship ecosystem, and locked the system scope covering SNA, GEI, Matchmaking, RAG Chatbot and Admin modules.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> Scope Document</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> Module List</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> Tech Stack Decision</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Done</span>
+              <div class="tmb-track"><div class="tmb-fill f-green" data-pct="100"></div></div>
+              <span class="tmb-pct">100%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-green"><i class="fa-solid fa-rocket"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="tl-item tl-left">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-green"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 11–24 Mar 2026</div>
+            <div class="tl-status ts-done"><i class="fa-solid fa-circle-check"></i> Completed</div>
+            <h3>System Architecture &amp; Workflow Design</h3>
+            <p>Designed the full system architecture, data flow diagrams, API contracts between Vue 3 frontend, Node.js backend and Python ML services. Produced the interactive workflow document.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> Index.html</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> Architecture Diagram</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> DB Schema Draft</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Done</span>
+              <div class="tmb-track"><div class="tmb-fill f-green" data-pct="100"></div></div>
+              <span class="tmb-pct">100%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-green"><i class="fa-solid fa-diagram-project"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Phase 2 badge -->
+        <div class="tl-phase-badge">
+          <div class="tl-phase-badge-inner pb-blue">
+            <i class="fa-solid fa-circle-check"></i> Phase 2 — UX/UI Design
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="tl-item tl-right">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-blue"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 24 Mar – 6 Apr 2026</div>
+            <div class="tl-status ts-done"><i class="fa-solid fa-circle-check"></i> Completed</div>
+            <h3>UX/UI Design &amp; HTML/CSS/JS Prototype</h3>
+            <p>Full design sprint covering all 7 application screens. Wireframes evolved into a high-fidelity interactive prototype built with HTML, CSS, vanilla JS and local JSON data — hosted on GitHub Pages for stakeholder review.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> All Page Wireframes</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> HTML/CSS/JS Prototype</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> JSON Mock Data</span>
+              <span class="tl-del del-done"><i class="fa-solid fa-check"></i> GitHub.io Deploy</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Done</span>
+              <div class="tmb-track"><div class="tmb-fill f-blue" data-pct="100"></div></div>
+              <span class="tmb-pct">100%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-current"><i class="fa-solid fa-paintbrush"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Phase 3 badge -->
+        <div class="tl-phase-badge">
+          <div class="tl-phase-badge-inner pb-darkblue">
+            <i class="fa-solid fa-code"></i> Phase 3 — Full Stack Development
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="tl-item tl-left">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-yellow"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 7 Apr – 5 May 2026</div>
+            <div class="tl-status ts-next"><i class="fa-solid fa-clock"></i> Up Next</div>
+            <h3>Frontend — Vue 3 Migration &amp; Component Build</h3>
+            <p>Convert the HTML prototype into a Vue 3 + Vite SPA. Build reusable components for all 7 modules, integrate Vue Router, Pinia state, Tailwind CSS, Chart.js and Leaflet.js maps.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Vue 3 App Scaffold</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> All Page Components</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Chart + Map Integration</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Pinia Store Setup</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Progress</span>
+              <div class="tmb-track"><div class="tmb-fill f-yellow" data-pct="0"></div></div>
+              <span class="tmb-pct">0%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-yellow"><i class="fa-brands fa-vuejs"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="tl-item tl-right">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-darkblue"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 7 Apr – 10 May 2026</div>
+            <div class="tl-status ts-planned"><i class="fa-solid fa-circle-dot"></i> Planned</div>
+            <h3>Backend — Node.js API &amp; Database</h3>
+            <p>Build REST API with Express, PostgreSQL schema migrations, JWT auth, Google OAuth 2.0, BullMQ job queues, CSV export endpoints and all data processing pipelines.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> REST API (all routes)</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> PostgreSQL Migrations</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Auth System (JWT + OAuth)</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> BullMQ Job Queues</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Progress</span>
+              <div class="tmb-track"><div class="tmb-fill f-darkblue" data-pct="0"></div></div>
+              <span class="tmb-pct">0%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-darkblue"><i class="fa-brands fa-node-js"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="tl-item tl-left">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-purple"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 15 Apr – 15 May 2026</div>
+            <div class="tl-status ts-planned"><i class="fa-solid fa-circle-dot"></i> Planned</div>
+            <h3>Python ML — SNA, GEI &amp; RAG Chatbot</h3>
+            <p>Implement NetworkX-based SNA pipeline, GEI data processing scripts (Scrapy + BeautifulSoup4), and the LangChain + FAISS RAG chatbot with Ollama-hosted Llama 3.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> SNA Engine (NetworkX)</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> GEI Scraper Pipeline</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> RAG Chatbot (LangChain)</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> FAISS Vector Index</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Progress</span>
+              <div class="tmb-track"><div class="tmb-fill f-gray" data-pct="0"></div></div>
+              <span class="tmb-pct">0%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-purple"><i class="fa-brands fa-python"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Phase 4 badge -->
+        <div class="tl-phase-badge">
+          <div class="tl-phase-badge-inner pb-blue">
+            <i class="fa-solid fa-vial"></i> Phase 4 — Integration &amp; Testing
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="tl-item tl-right">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-blue"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 11 May – 2 Jun 2026</div>
+            <div class="tl-status ts-planned"><i class="fa-solid fa-circle-dot"></i> Planned</div>
+            <h3>System Integration, Testing &amp; QA</h3>
+            <p>End-to-end integration of all 7 modules, API contract testing, frontend E2E tests, performance benchmarking, security audits (RBAC, SQL injection, XSS), and bug fixing sprints.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Integration Tests</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> E2E Test Suite</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Security Audit</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Performance Report</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Progress</span>
+              <div class="tmb-track"><div class="tmb-fill f-blue" data-pct="0"></div></div>
+              <span class="tmb-pct">0%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-teal"><i class="fa-solid fa-vial-circle-check"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Phase 5 badge -->
+        <div class="tl-phase-badge">
+          <div class="tl-phase-badge-inner pb-darkblue">
+            <i class="fa-solid fa-flag-checkered"></i> Phase 5 — Final Delivery
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="tl-item tl-left">
+          <div class="tl-card">
+            <div class="tl-card-accent ca-darkblue"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar"></i> 2 Jun – 11 Jun 2026</div>
+            <div class="tl-status ts-planned"><i class="fa-solid fa-circle-dot"></i> Planned</div>
+            <h3>Documentation, Deployment &amp; Demo Prep</h3>
+            <p>Write full technical documentation, API reference, user guide, deploy to production server, prepare live demo environment and research presentation for final submission.</p>
+            <div class="tl-deliverables">
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Technical Docs</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> User Manual</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Production Deploy</span>
+              <span class="tl-del"><i class="fa-solid fa-clock"></i> Demo Environment</span>
+            </div>
+            <div class="tl-mini-bar">
+              <span class="tmb-label">Progress</span>
+              <div class="tmb-track"><div class="tmb-fill f-darkblue" data-pct="0"></div></div>
+              <span class="tmb-pct">0%</span>
+            </div>
+          </div>
+          <div class="tl-node"><div class="tl-node-icon ni-darkblue"><i class="fa-solid fa-flag-checkered"></i></div></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Final deadline -->
+        <div class="tl-item tl-right">
+          <div class="tl-card">
+            <div class="tl-card-accent" style="background:linear-gradient(90deg,#c0392b,#e74c3c)"></div>
+            <div class="tl-card-date"><i class="fa-solid fa-calendar-xmark"></i> 21 Jun 2026</div>
+            <div class="tl-status" style="background:rgba(192,57,43,0.09);color:#8b1a10;border:1.5px solid rgba(192,57,43,0.22);">
+              <i class="fa-solid fa-triangle-exclamation"></i> Hard Deadline
+            </div>
+            <h3>🎯 Final Project Submission</h3>
+            <p>Absolute final deadline for submission of the completed Ecosystem Support System — fully deployed, documented, and reviewed. 10 days of buffer after the internal soft deadline (11 Jun).</p>
+            <div class="tl-deliverables">
+              <span class="tl-del" style="border-color:rgba(192,57,43,0.2);color:#8b1a10;background:rgba(192,57,43,0.06)"><i class="fa-solid fa-flag" style="color:#c0392b"></i> All Deliverables</span>
+              <span class="tl-del" style="border-color:rgba(192,57,43,0.2);color:#8b1a10;background:rgba(192,57,43,0.06)"><i class="fa-solid fa-flag" style="color:#c0392b"></i> Final Presentation</span>
+            </div>
+          </div>
+          <div class="tl-node">
+            <div class="tl-node-icon" style="background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+          </div>
+          <div style="flex:1"></div>
+        </div>
+
+      </div><!-- /.tl-timeline -->
+
+      <!-- ════════════════════════════════
+           GANTT CHART
+      ════════════════════════════════ -->
+      <div class="gantt-section reveal">
+        <div class="gantt-hd">
+          <h3><i class="fa-solid fa-bars-progress"></i> Gantt Overview — Week by Week</h3>
+          <p>14-week visual schedule from March 11 to June 21, 2026</p>
+        </div>
+        <div class="gantt-wrap">
+          <div class="gantt-months">
+            <div class="gm-label">Task</div>
+            <div class="gm-month">W1<div class="gm-week">Mar 11</div></div>
+            <div class="gm-month">W2<div class="gm-week">Mar 18</div></div>
+            <div class="gm-month">W3<div class="gm-week">Mar 25</div></div>
+            <div class="gm-month gm-current">W4<div class="gm-week">Apr 1</div></div>
+            <div class="gm-month">W5<div class="gm-week">Apr 7</div></div>
+            <div class="gm-month">W6<div class="gm-week">Apr 14</div></div>
+            <div class="gm-month">W7<div class="gm-week">Apr 21</div></div>
+            <div class="gm-month">W8<div class="gm-week">Apr 28</div></div>
+            <div class="gm-month">W9<div class="gm-week">May 5</div></div>
+            <div class="gm-month">W10<div class="gm-week">May 12</div></div>
+            <div class="gm-month">W11<div class="gm-week">May 19</div></div>
+            <div class="gm-month">W12<div class="gm-week">May 26</div></div>
+            <div class="gm-month">W13<div class="gm-week">Jun 2</div></div>
+            <div class="gm-month">W14<div class="gm-week">Jun 9+</div></div>
+          </div>
+          <div style="position:relative">
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-solid fa-magnifying-glass"></i><div>Research &amp; Scope<span>Phase 1</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-green" data-left="0%" data-width="21.4%">Research</div>
+                <div class="gantt-today" style="left:25%"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-solid fa-diagram-project"></i><div>Workflow Design<span>Phase 1</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-green" data-left="7.1%" data-width="14.3%">Architecture</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-solid fa-paintbrush"></i><div>UX/UI &amp; Prototype<span>Phase 2</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-blue" data-left="14.3%" data-width="14.3%">Prototype ✓</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-brands fa-vuejs"></i><div>Vue 3 Frontend<span>Phase 3</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-yellow" data-left="28.6%" data-width="28.6%">Vue 3 + Vite</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-brands fa-node-js"></i><div>Node.js Backend<span>Phase 3</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-darkblue" data-left="28.6%" data-width="35.7%">Express + PostgreSQL</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-brands fa-python"></i><div>Python ML / RAG<span>Phase 3</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-purple" data-left="35.7%" data-width="35.7%">SNA · GEI · Chatbot</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-solid fa-plug-circle-check"></i><div>Integration &amp; QA<span>Phase 4</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-teal" data-left="64.3%" data-width="21.4%">Testing</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gr-name"><i class="fa-solid fa-file-lines"></i><div>Docs &amp; Deploy<span>Phase 5</span></div></div>
+              <div class="gantt-cells">
+                <div class="gantt-bar gb-darkblue" data-left="85.7%" data-width="14.3%">Final</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════
+           WBS CARDS
+      ════════════════════════════════ -->
+      <div class="wbs-section">
+        <div class="wbs-hd reveal">
+          <div>
+            <h3><i class="fa-solid fa-list-check"></i> Work Breakdown Structure</h3>
+            <p>All tasks grouped by module with individual completion tracking</p>
+          </div>
+        </div>
+        <div class="wbs-grid">
+
+          <!-- WBS 1 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-green"><i class="fa-solid fa-diagram-project"></i></div>
+              <div class="wbs-card-hd-info"><h4>Design &amp; Architecture</h4><span>Mar 11 – Mar 24</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-green" data-pct="100"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">System requirements analysis</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Module identification (7 modules)</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Data flow &amp; API contract design</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Interactive workflow document</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">PostgreSQL schema draft</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-green">100% Complete</span>
+              <span class="wcf-label">5 / 5 tasks</span>
+            </div>
+          </div>
+
+          <!-- WBS 2 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-blue"><i class="fa-solid fa-paintbrush"></i></div>
+              <div class="wbs-card-hd-info"><h4>UX/UI &amp; Prototype</h4><span>Mar 24 – Apr 6</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-blue" data-pct="100"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Wireframes for all 7 pages</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">HTML/CSS/JS hi-fi prototype</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">JSON mock data for all pages</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Responsive mobile layout</span></div>
+              <div class="wbs-task"><div class="wt-check wt-done"><i class="fa-solid fa-check"></i></div><span class="wbs-task-text done-text">Hosted on GitHub Pages (testing)</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-blue">100% Complete</span>
+              <span class="wcf-label">5 / 5 tasks</span>
+            </div>
+          </div>
+
+          <!-- WBS 3 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-yellow"><i class="fa-brands fa-vuejs"></i></div>
+              <div class="wbs-card-hd-info"><h4>Vue 3 Frontend</h4><span>Apr 7 – May 5</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-yellow" data-pct="0"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Vite + Vue 3 project scaffold</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Vue Router + Pinia setup</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">All 7 module page components</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Chart.js + Leaflet.js + D3.js</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Tailwind CSS design system</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-yellow">0% — Pending</span>
+              <span class="wcf-label">0 / 5 tasks</span>
+            </div>
+          </div>
+
+          <!-- WBS 4 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-darkblue"><i class="fa-brands fa-node-js"></i></div>
+              <div class="wbs-card-hd-info"><h4>Node.js Backend</h4><span>Apr 7 – May 10</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-darkblue" data-pct="0"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Express REST API (all routes)</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">PostgreSQL migrations (Sequelize)</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">JWT auth + Google OAuth 2.0</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">BullMQ background jobs</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">CSV export + file handling</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-darkblue">0% — Planned</span>
+              <span class="wcf-label">0 / 5 tasks</span>
+            </div>
+          </div>
+
+          <!-- WBS 5 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-teal"><i class="fa-brands fa-python"></i></div>
+              <div class="wbs-card-hd-info"><h4>Python ML &amp; RAG</h4><span>Apr 15 – May 15</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-teal" data-pct="0"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">NetworkX SNA analysis engine</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Scrapy + BS4 GEI data scraper</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">LangChain + FAISS RAG pipeline</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Ollama local LLM (Llama 3)</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Startup matching ML algorithm</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-teal">0% — Planned</span>
+              <span class="wcf-label">0 / 5 tasks</span>
+            </div>
+          </div>
+
+          <!-- WBS 6 -->
+          <div class="wbs-card">
+            <div class="wbs-card-hd">
+              <div class="wbs-ico wi-purple"><i class="fa-solid fa-rocket"></i></div>
+              <div class="wbs-card-hd-info"><h4>Testing &amp; Deployment</h4><span>May 11 – Jun 11</span></div>
+            </div>
+            <div class="wbs-progress-bar"><div class="wbs-progress-fill wpf-purple" data-pct="0"></div></div>
+            <div class="wbs-tasks">
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">E2E + integration test suite</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Security audit (RBAC, XSS, SQLi)</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Production server deployment</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Technical documentation</span></div>
+              <div class="wbs-task"><div class="wt-check wt-pending"></div><span class="wbs-task-text">Final demo + presentation</span></div>
+            </div>
+            <div class="wbs-card-footer">
+              <span class="wcf-pct pct-purple">0% — Planned</span>
+              <span class="wcf-label">0 / 5 tasks</span>
+            </div>
+          </div>
+
+        </div><!-- /.wbs-grid -->
+      </div><!-- /.wbs-section -->
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="images/logo_KE.png" alt="Khmer Enterprise" class="footer-logo-img" onerror="this.style.display='none'"/>
+          <span>Khmer Enterprise</span>
+        </div>
+        <p>Ecosystem Support System · Cambodia Entrepreneurship Initiative</p>
+      </div>
+      <div class="footer-right">
+        <span class="ft-badge"><i class="fa-solid fa-calendar-check"></i> Mar 11 – Jun 21</span>
+        <span class="ft-badge"><i class="fa-solid fa-flag-checkered"></i> 102 Days</span>
+        <span class="ft-badge"><i class="fa-solid fa-layer-group"></i> 5 Phases</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/timeline.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ecosystem Support System — Workflow</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/timeline.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ════════════════════════════════
+       HEADER
+  ════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="#">
+        <img src="images/logo_KE.png" alt="Khmer Enterprise" class="logo-img"
+             onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'"/>
+        <div class="logo-icon-fb" id="logoFallback" style="display:none">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="logo-divider" aria-hidden="true"></div>
+        <div class="logo-text">
+          <span class="logo-main">Khmer Enterprise</span>
+          <span class="logo-sub">ESS · Workflow</span>
+        </div>
+      </a>
+
+      <!-- Centre badge (desktop only) -->
+      <div class="header-badge">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>Cambodia Entrepreneurship Ecosystem</span>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════
+       PAGE TABS
+  ════════════════════════════════ -->
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <a class="ptab active" href="index.html">
+        <i class="fa-solid fa-sitemap"></i> System Workflow
+      </a>
+      <a class="ptab" href="timeline.html">
+        <i class="fa-solid fa-timeline"></i> Timeline &amp; WBS
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       HERO
+  ════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-blob b1"></div>
+      <div class="deco-blob b2"></div>
+      <div class="deco-grid"></div>
+    </div>
+    <div class="hero-inner container">
+      <div class="hero-left">
+        <div class="hero-tag"><i class="fa-solid fa-sitemap"></i> System Architecture & Workflow</div>
+        <h1>Ecosystem Support<br/><span class="hero-accent">System Workflow</span></h1>
+        <p>A comprehensive platform integrating SNA, GEI data analytics, AI-powered chatbot, and startup matchmaking — built on Vue 3, Node.js, and PostgreSQL.</p>
+        <div class="hero-pills">
+          <span class="pill pill-green"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+          <span class="pill pill-blue"><i class="fa-brands fa-node-js"></i> Node.js + Express</span>
+          <span class="pill pill-dark"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+          <span class="pill pill-yellow"><i class="fa-brands fa-python"></i> Python ML</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stat-card">
+          <div class="hs-item"><span class="hs-n">7</span><span class="hs-l">Modules</span></div>
+          <div class="hs-div"></div>
+          <div class="hs-item"><span class="hs-n">3</span><span class="hs-l">Cities</span></div>
+          <div class="hs-div"></div>
+          <div class="hs-item"><span class="hs-n">25+</span><span class="hs-l">Tools</span></div>
+          <div class="hs-div"></div>
+          <div class="hs-item"><span class="hs-n">4</span><span class="hs-l">Reports</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       FLOW NAV
+  ════════════════════════════════ -->
+  <nav class="flow-nav" id="flowNav">
+    <div class="flow-nav-inner container">
+      <div class="flow-step" data-target="home"><div class="fs-icon"><i class="fa-solid fa-house"></i></div><span>Home</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="auth"><div class="fs-icon"><i class="fa-solid fa-lock"></i></div><span>Auth</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="matching"><div class="fs-icon"><i class="fa-solid fa-handshake"></i></div><span>Matching</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="sna"><div class="fs-icon"><i class="fa-solid fa-share-nodes"></i></div><span>SNA</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="gei"><div class="fs-icon"><i class="fa-solid fa-globe"></i></div><span>GEI</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="chatbot"><div class="fs-icon"><i class="fa-solid fa-robot"></i></div><span>Chatbot</span></div>
+      <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
+      <div class="flow-step" data-target="admin"><div class="fs-icon"><i class="fa-solid fa-shield-halved"></i></div><span>Admin</span></div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════
+       MODULES
+  ════════════════════════════════ -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ── 01 Home ── -->
+      <article class="mod-card reveal" id="home">
+        <div class="mod-accent accent-green"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">01</div>
+          <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-house"></i></div>
+          <div class="mod-titles">
+            <h2>Home Page</h2>
+            <p>Public landing · awareness · methodology overview</p>
+          </div>
+          <div class="mod-badge mb-green">Frontend</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">The primary entry point for all visitors. Introduces Cambodia's entrepreneurship ecosystem, highlights SNA and GEI methodologies, and showcases research &amp; community activities — before guiding users to register or log in.</p>
+
+          <div class="steps-grid">
+            <div class="sg-item">
+              <div class="sgi-dot" style="background:var(--green)"></div>
+              <div class="sgi-icon sgi-green"><i class="fa-solid fa-book-open"></i></div>
+              <div class="sgi-text"><h4>Ecosystem Overview</h4><p>Animated stats, ecosystem pillars, and Cambodia context with hero visuals.</p></div>
+            </div>
+            <div class="sg-item">
+              <div class="sgi-dot" style="background:var(--blue)"></div>
+              <div class="sgi-icon sgi-blue"><i class="fa-solid fa-share-nodes"></i></div>
+              <div class="sgi-text"><h4>Methodology Cards</h4><p>SNA and GEI methodology summaries with illustrated explainers.</p></div>
+            </div>
+            <div class="sg-item">
+              <div class="sgi-dot" style="background:var(--yellow-dark)"></div>
+              <div class="sgi-icon sgi-yellow"><i class="fa-solid fa-people-group"></i></div>
+              <div class="sgi-text"><h4>Research &amp; Community</h4><p>Stories, reports, and partner activities showcasing ground-level work.</p></div>
+            </div>
+            <div class="sg-item">
+              <div class="sgi-dot" style="background:var(--blue-dark)"></div>
+              <div class="sgi-icon sgi-darkblue"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>
+              <div class="sgi-text"><h4>CTA → Login / Register</h4><p>Clear entry points directing visitors into the authenticated platform.</p></div>
+            </div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-vue"><i class="fa-solid fa-bolt"></i> Vite</span>
+              <span class="chip ch-vue"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP / AOS.js</span>
+              <span class="chip ch-lib"><i class="fa-brands fa-font-awesome"></i> Font Awesome 6</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-font"></i> Poppins</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 02 Auth ── -->
+      <article class="mod-card reveal" id="auth">
+        <div class="mod-accent accent-blue"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">02</div>
+          <div class="mod-icon-wrap mw-blue"><i class="fa-solid fa-lock"></i></div>
+          <div class="mod-titles">
+            <h2>Login &amp; Registration</h2>
+            <p>Authentication · Google OAuth 2.0 · JWT sessions</p>
+          </div>
+          <div class="mod-badge mb-blue">Auth</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">Secure gateway supporting email/password registration and Google OAuth 2.0 single sign-on. JWT tokens manage sessions; all credential data is hashed via bcrypt and persisted in PostgreSQL.</p>
+
+          <div class="auth-diagram">
+            <div class="ad-row ad-center">
+              <div class="ad-node ad-start"><i class="fa-solid fa-user"></i> User Arrives</div>
+            </div>
+            <div class="ad-vline"></div>
+            <div class="ad-branches">
+              <div class="ad-branch">
+                <div class="ad-node ad-email"><i class="fa-solid fa-user-plus"></i> Register</div>
+                <div class="ad-vline-sm"></div>
+                <div class="ad-subs">
+                  <div class="ad-sub"><i class="fa-solid fa-envelope"></i> Email + Password</div>
+                  <div class="ad-sub"><i class="fa-solid fa-id-card"></i> Profile Setup</div>
+                  <div class="ad-sub"><i class="fa-solid fa-envelope-open-text"></i> Email Verify</div>
+                </div>
+              </div>
+              <div class="ad-or-pill">OR</div>
+              <div class="ad-branch">
+                <div class="ad-node ad-google"><i class="fa-brands fa-google"></i> Google OAuth</div>
+                <div class="ad-vline-sm"></div>
+                <div class="ad-subs">
+                  <div class="ad-sub"><i class="fa-brands fa-google"></i> Google Consent</div>
+                  <div class="ad-sub"><i class="fa-solid fa-id-badge"></i> Auto Profile Fill</div>
+                  <div class="ad-sub"><i class="fa-solid fa-circle-check"></i> Instant Access</div>
+                </div>
+              </div>
+            </div>
+            <div class="ad-vline"></div>
+            <div class="ad-row ad-center">
+              <div class="ad-node ad-end"><i class="fa-solid fa-door-open"></i> Dashboard Access</div>
+            </div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Node.js + Express</span>
+              <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="chip ch-auth"><i class="fa-brands fa-google"></i> Google OAuth 2.0</span>
+              <span class="chip ch-auth"><i class="fa-solid fa-key"></i> JWT (jsonwebtoken)</span>
+              <span class="chip ch-auth"><i class="fa-solid fa-shield"></i> bcrypt</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-envelope"></i> Nodemailer / SendGrid</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue Router Guards</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 03 Matching ── -->
+      <article class="mod-card reveal" id="matching">
+        <div class="mod-accent accent-green"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">03</div>
+          <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-handshake"></i></div>
+          <div class="mod-titles">
+            <h2>Startup Support Matching</h2>
+            <p>SNA-powered matchmaking · 2021 &amp; 2024 datasets</p>
+          </div>
+          <div class="mod-badge mb-green">Matching</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">Users submit a structured business profile. An Express API endpoint processes the input through a Python scoring engine cross-referencing SNA 2021 &amp; 2024 datasets — returning best-fit ESOs, investors, peers, mentors, and programs.</p>
+
+          <div class="pipeline-row">
+            <div class="pr-step">
+              <div class="pr-ico pr-ico-green"><i class="fa-solid fa-file-pen"></i></div>
+              <div class="pr-lbl">User Input</div>
+              <div class="pr-sub">Sector · Stage · Location · Needs</div>
+            </div>
+            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="pr-step">
+              <div class="pr-ico pr-ico-blue"><i class="fa-solid fa-gears"></i></div>
+              <div class="pr-lbl">API Processing</div>
+              <div class="pr-sub">Express Route · Scoring Logic</div>
+            </div>
+            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="pr-step pr-step-active">
+              <div class="pr-ico pr-ico-darkgreen"><i class="fa-solid fa-share-nodes"></i></div>
+              <div class="pr-lbl">SNA Match</div>
+              <div class="pr-sub">NetworkX · 2021 + 2024</div>
+            </div>
+            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="pr-step">
+              <div class="pr-ico pr-ico-yellow"><i class="fa-solid fa-chart-bar"></i></div>
+              <div class="pr-lbl">Result Display</div>
+              <div class="pr-sub">Graph + Cards + Score</div>
+            </div>
+          </div>
+
+          <div class="output-label">Match Output Types</div>
+          <div class="output-grid">
+            <div class="og-item"><i class="fa-solid fa-building-user"></i><span>ESO Matches</span></div>
+            <div class="og-item"><i class="fa-solid fa-network-wired"></i><span>Network Nodes</span></div>
+            <div class="og-item"><i class="fa-solid fa-hand-holding-dollar"></i><span>Investors</span></div>
+            <div class="og-item"><i class="fa-solid fa-users-gear"></i><span>Peer Startups</span></div>
+            <div class="og-item"><i class="fa-solid fa-graduation-cap"></i><span>Mentors</span></div>
+            <div class="og-item"><i class="fa-solid fa-lightbulb"></i><span>Programs</span></div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
+              <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="chip ch-python"><i class="fa-brands fa-python"></i> Python (NetworkX)</span>
+              <span class="chip ch-python"><i class="fa-solid fa-table"></i> Pandas</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-diagram-project"></i> D3.js Network</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 04 SNA ── -->
+      <article class="mod-card reveal" id="sna">
+        <div class="mod-accent accent-blue"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">04</div>
+          <div class="mod-icon-wrap mw-blue"><i class="fa-solid fa-share-nodes"></i></div>
+          <div class="mod-titles">
+            <h2>Social Network Analysis Dashboard</h2>
+            <p>Phnom Penh · Siem Reap · Battambang ecosystem mapping</p>
+          </div>
+          <div class="mod-badge mb-blue">Analytics</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">An interactive Vue dashboard mapping the entrepreneurship network across three Cambodian cities. Survey data flows through a multi-stage pipeline into live charts, geographic maps, and Kumu.io network visualizations.</p>
+
+          <div class="pipeline-vert">
+            <div class="pv-row">
+              <div class="pv-dot pv-green"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 1</span>
+                <h4><i class="fa-solid fa-database pv-icon-green"></i> Data Collection</h4>
+                <p>SNA Survey 2024 distributed across Phnom Penh, Siem Reap, and Battambang ecosystems</p>
+                <div class="pv-tags"><span>Google Forms</span><span>KoBoToolbox</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-blue"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 2</span>
+                <h4><i class="fa-solid fa-broom pv-icon-blue"></i> Data Cleaning</h4>
+                <p>Initial cleanup, column normalization, and structured export via Power Query Editor</p>
+                <div class="pv-tags"><span>Power Query</span><span>Excel</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-yellow"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 3</span>
+                <h4><i class="fa-brands fa-python pv-icon-yellow"></i> Python Processing &amp; EDA</h4>
+                <p>Edge-list generation, centrality metrics (degree, betweenness, closeness), cluster detection</p>
+                <div class="pv-tags"><span>Pandas</span><span>NetworkX</span><span>Matplotlib</span><span>Seaborn</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-darkblue pv-active-dot"></div>
+              <div class="pv-card pv-card-highlight">
+                <span class="pv-step-tag pv-step-active">Step 4 · Output</span>
+                <h4><i class="fa-solid fa-chart-area pv-icon-darkblue"></i> Web Visualization</h4>
+                <p>Vue 3 dashboard with network graph, choropleth maps, key findings panel, and Kumu.io API embed</p>
+                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span><span>Kumu.io API</span><span>D3.js</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="city-row">
+            <div class="city-chip"><i class="fa-solid fa-city"></i> Phnom Penh</div>
+            <div class="city-chip"><i class="fa-solid fa-monument"></i> Siem Reap</div>
+            <div class="city-chip"><i class="fa-solid fa-building"></i> Battambang</div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
+              <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="chip ch-python"><i class="fa-solid fa-table-cells"></i> Power Query</span>
+              <span class="chip ch-python"><i class="fa-brands fa-python"></i> NetworkX</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-map-location-dot"></i> Leaflet.js</span>
+              <span class="chip ch-api"><i class="fa-solid fa-plug"></i> Kumu.io API</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-diagram-project"></i> D3.js</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 05 GEI ── -->
+      <article class="mod-card reveal" id="gei">
+        <div class="mod-accent accent-yellow"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">05</div>
+          <div class="mod-icon-wrap mw-yellow"><i class="fa-solid fa-globe"></i></div>
+          <div class="mod-titles">
+            <h2>Global Entrepreneurship Index</h2>
+            <p>Cambodia GEI 2025 · Opinium data · country comparisons</p>
+          </div>
+          <div class="mod-badge mb-yellow">Analytics</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">Visualizes Cambodia's GEI rankings and sub-index performance sourced from the Opinium 2025 report. Data is scraped, cleaned, and processed through a Python pipeline before being served via Express API to a Vue dashboard.</p>
+
+          <div class="pipeline-vert">
+            <div class="pv-row">
+              <div class="pv-dot pv-green"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 1</span>
+                <h4><i class="fa-solid fa-spider pv-icon-green"></i> Data Scraping</h4>
+                <p>Automated scraper targeting the Opinium GEI 2025 report site and embedded PDF assets</p>
+                <div class="pv-tags"><span>Scrapy</span><span>BeautifulSoup4</span><span>Requests</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-yellow"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 2</span>
+                <h4><i class="fa-solid fa-broom pv-icon-yellow"></i> Cleaning</h4>
+                <p>Normalization, missing-value handling, multi-year alignment, and structured CSV export</p>
+                <div class="pv-tags"><span>Power Query</span><span>Excel</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-blue"></div>
+              <div class="pv-card">
+                <span class="pv-step-tag">Step 3</span>
+                <h4><i class="fa-brands fa-python pv-icon-blue"></i> EDA &amp; Processing</h4>
+                <p>Ranking computation, trend lines, regional comparisons, and feature engineering</p>
+                <div class="pv-tags"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+              </div>
+            </div>
+            <div class="pv-connector"></div>
+            <div class="pv-row">
+              <div class="pv-dot pv-darkgreen pv-active-dot"></div>
+              <div class="pv-card pv-card-highlight">
+                <span class="pv-step-tag pv-step-active">Step 4 · Output</span>
+                <h4><i class="fa-solid fa-earth-asia pv-icon-darkgreen"></i> Dashboard Visualization</h4>
+                <p>Country ranking maps, radar charts for sub-indices, trend lines, and Cambodia spotlight panel</p>
+                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span><span>Vue 3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-python"><i class="fa-solid fa-spider"></i> Scrapy</span>
+              <span class="chip ch-python"><i class="fa-brands fa-python"></i> BeautifulSoup4</span>
+              <span class="chip ch-python"><i class="fa-solid fa-table-cells"></i> Power Query</span>
+              <span class="chip ch-python"><i class="fa-brands fa-python"></i> Pandas / NumPy</span>
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
+              <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-map"></i> Leaflet.js</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 06 Chatbot ── -->
+      <article class="mod-card reveal" id="chatbot">
+        <div class="mod-accent accent-green"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">06</div>
+          <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-robot"></i></div>
+          <div class="mod-titles">
+            <h2>AI Chatbot System</h2>
+            <p>RAG-powered · fine-tuned on Khmer Enterprise research corpus</p>
+          </div>
+          <div class="mod-badge mb-green">AI / LLM</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">An intelligent assistant answering startup and ecosystem questions grounded in Khmer Enterprise's published reports. Uses Retrieval-Augmented Generation (RAG) so every response is sourced from authoritative documents.</p>
+
+          <div class="rag-layout">
+            <div class="rag-sources">
+              <div class="rag-src-hd"><i class="fa-solid fa-folder-open"></i> Knowledge Base (PDFs)</div>
+              <div class="rag-src-list">
+                <div class="rag-src-item"><i class="fa-solid fa-file-pdf"></i><span>Entrepreneurial Ecosystem Roadmap 2025–2035</span></div>
+                <div class="rag-src-item"><i class="fa-solid fa-file-pdf"></i><span>Opinium GEI 2025 Report</span></div>
+                <div class="rag-src-item"><i class="fa-solid fa-file-pdf"></i><span>SNA 2021 — Phnom Penh Ecosystem</span></div>
+                <div class="rag-src-item"><i class="fa-solid fa-file-pdf"></i><span>Social Network Analysis Study 2024</span></div>
+              </div>
+            </div>
+
+            <div class="rag-pipeline">
+              <div class="rag-step">
+                <div class="rag-sn">1</div>
+                <div class="rag-sb">
+                  <h5><i class="fa-solid fa-scissors"></i> PDF Text Extraction</h5>
+                  <p>Extract raw text from all PDF reports into structured .txt corpus</p>
+                  <div class="rag-tags"><span>pdfminer.six</span><span>pypdf2</span></div>
+                </div>
+              </div>
+              <div class="rag-conn"></div>
+              <div class="rag-step">
+                <div class="rag-sn">2</div>
+                <div class="rag-sb">
+                  <h5><i class="fa-solid fa-cubes"></i> Chunking &amp; Embedding</h5>
+                  <p>Split text into overlapping chunks, generate dense vector embeddings</p>
+                  <div class="rag-tags"><span>LangChain</span><span>HuggingFace Embeddings</span></div>
+                </div>
+              </div>
+              <div class="rag-conn"></div>
+              <div class="rag-step">
+                <div class="rag-sn">3</div>
+                <div class="rag-sb">
+                  <h5><i class="fa-solid fa-database"></i> Vector Store</h5>
+                  <p>Index and store embeddings for fast semantic search at query time</p>
+                  <div class="rag-tags"><span>FAISS</span><span>ChromaDB</span></div>
+                </div>
+              </div>
+              <div class="rag-conn"></div>
+              <div class="rag-step rag-step-hl">
+                <div class="rag-sn rag-sn-hl">4</div>
+                <div class="rag-sb">
+                  <h5><i class="fa-solid fa-brain"></i> LLM Generation (RAG)</h5>
+                  <p>Retrieve top-k context chunks → inject into prompt → stream response with citations</p>
+                  <div class="rag-tags"><span>Llama 3 / Mistral</span><span>Ollama</span></div>
+                </div>
+              </div>
+              <div class="rag-conn"></div>
+              <div class="rag-step">
+                <div class="rag-sn">5</div>
+                <div class="rag-sb">
+                  <h5><i class="fa-solid fa-comment-dots"></i> Chat UI (Vue)</h5>
+                  <p>Streaming chat interface with source citations and conversation history</p>
+                  <div class="rag-tags"><span>Vue 3</span><span>SSE Streaming</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-ai"><i class="fa-solid fa-brain"></i> Llama 3 / Mistral</span>
+              <span class="chip ch-ai"><i class="fa-solid fa-robot"></i> HuggingFace Transformers</span>
+              <span class="chip ch-ai"><i class="fa-solid fa-link-slash"></i> LangChain (RAG)</span>
+              <span class="chip ch-ai"><i class="fa-solid fa-cube"></i> FAISS / ChromaDB</span>
+              <span class="chip ch-python"><i class="fa-solid fa-file-pdf"></i> pdfminer.six</span>
+              <span class="chip ch-python"><i class="fa-solid fa-microchip"></i> Ollama (local LLM)</span>
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express (API proxy)</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3 (Chat UI)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 07 Admin ── -->
+      <article class="mod-card reveal" id="admin">
+        <div class="mod-accent accent-dark"></div>
+        <div class="mod-header">
+          <div class="mod-num" aria-hidden="true">07</div>
+          <div class="mod-icon-wrap mw-dark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="mod-titles">
+            <h2>Admin Control Panel</h2>
+            <p>User management · data control · logs · AI model manager</p>
+          </div>
+          <div class="mod-badge mb-dark">Admin</div>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">A restricted, role-protected panel for administrators. Manage all platform components — users, datasets, AI models — and audit every action with full IP and session logging.</p>
+
+          <div class="admin-grid">
+            <div class="ag-feat">
+              <div class="ag-ico ag-green"><i class="fa-solid fa-users-cog"></i></div>
+              <div class="ag-text"><h5>User Management</h5><p>View, edit, disable or delete accounts. Role assignment and RBAC permission control.</p></div>
+            </div>
+            <div class="ag-feat">
+              <div class="ag-ico ag-blue"><i class="fa-solid fa-table-cells-large"></i></div>
+              <div class="ag-text"><h5>Dataset Manager</h5><p>Upload new GEI / SNA datasets, trigger reprocessing pipelines, monitor data health.</p></div>
+            </div>
+            <div class="ag-feat">
+              <div class="ag-ico ag-yellow"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <div class="ag-text"><h5>Matching Log Tracker</h5><p>Review all startup matching submissions with timestamps, inputs, and result snapshots.</p></div>
+            </div>
+            <div class="ag-feat">
+              <div class="ag-ico ag-darkblue"><i class="fa-solid fa-scroll"></i></div>
+              <div class="ag-text"><h5>Activity &amp; Access Logs</h5><p>Track user sessions, IP addresses, page visits, and system events. Export as CSV.</p></div>
+            </div>
+            <div class="ag-feat">
+              <!-- FIXED: fa-microchip-ai doesn't exist in FA 6.5 — replaced with fa-brain + fa-microchip combo -->
+              <div class="ag-ico ag-darkgreen"><i class="fa-solid fa-brain"></i></div>
+              <div class="ag-text"><h5>AI Model Manager</h5><p>Upload fine-tuned models, swap active chatbot version, monitor performance metrics.</p></div>
+            </div>
+            <div class="ag-feat">
+              <div class="ag-ico ag-green"><i class="fa-solid fa-bell"></i></div>
+              <div class="ag-text"><h5>Notifications</h5><p>Platform announcements, maintenance scheduling, and system-wide alerts.</p></div>
+            </div>
+          </div>
+
+          <div class="tools-block">
+            <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
+            <div class="tb-chips">
+              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3 (Admin UI)</span>
+              <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express + Middleware</span>
+              <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="chip ch-auth"><i class="fa-solid fa-shield"></i> RBAC (role-based)</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-chart-line"></i> Chart.js (analytics)</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-rotate"></i> Bull / BullMQ</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-file-export"></i> csv-writer</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ════════════════════════════════
+       TECH STACK SUMMARY
+  ════════════════════════════════ -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="ts-hd">
+        <h2><i class="fa-solid fa-layer-group"></i> Complete Technology Stack</h2>
+        <p>Every tool powering the Ecosystem Support System</p>
+      </div>
+      <div class="ts-grid">
+        <div class="ts-col">
+          <div class="ts-col-hd ts-green"><i class="fa-brands fa-vuejs"></i> Frontend (Vue 3)</div>
+          <ul>
+            <li><i class="fa-brands fa-vuejs"></i> Vue 3 + Composition API</li>
+            <li><i class="fa-solid fa-bolt"></i> Vite (Build tool)</li>
+            <li><i class="fa-solid fa-wind"></i> Tailwind CSS</li>
+            <li><i class="fa-solid fa-chart-bar"></i> Chart.js</li>
+            <li><i class="fa-solid fa-map"></i> Leaflet.js</li>
+            <li><i class="fa-solid fa-diagram-project"></i> D3.js</li>
+            <li><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP / AOS.js</li>
+            <li><i class="fa-solid fa-route"></i> Vue Router</li>
+            <li><i class="fa-solid fa-box"></i> Pinia (state)</li>
+          </ul>
+        </div>
+        <div class="ts-col">
+          <div class="ts-col-hd ts-blue"><i class="fa-brands fa-node-js"></i> Backend (Node.js)</div>
+          <ul>
+            <li><i class="fa-brands fa-node-js"></i> Node.js + Express</li>
+            <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
+            <li><i class="fa-solid fa-link"></i> pg / Sequelize ORM</li>
+            <li><i class="fa-solid fa-key"></i> JWT + bcrypt</li>
+            <li><i class="fa-brands fa-google"></i> Google OAuth 2.0</li>
+            <li><i class="fa-solid fa-rotate"></i> Bull / BullMQ</li>
+            <li><i class="fa-solid fa-envelope"></i> Nodemailer</li>
+            <li><i class="fa-solid fa-plug"></i> REST API (JSON)</li>
+          </ul>
+        </div>
+        <div class="ts-col">
+          <div class="ts-col-hd ts-yellow"><i class="fa-brands fa-python"></i> Data &amp; Analytics</div>
+          <ul>
+            <li><i class="fa-solid fa-table"></i> Pandas / NumPy</li>
+            <li><i class="fa-solid fa-table-cells"></i> Power Query Editor</li>
+            <li><i class="fa-solid fa-share-nodes"></i> NetworkX (SNA)</li>
+            <li><i class="fa-solid fa-spider"></i> Scrapy + BS4</li>
+            <li><i class="fa-solid fa-chart-area"></i> Matplotlib / Seaborn</li>
+            <li><i class="fa-solid fa-plug"></i> Kumu.io API</li>
+            <li><i class="fa-solid fa-file-export"></i> CSV / JSON export</li>
+          </ul>
+        </div>
+        <div class="ts-col">
+          <div class="ts-col-hd ts-darkblue"><i class="fa-solid fa-brain"></i> AI / LLM (RAG)</div>
+          <ul>
+            <li><i class="fa-solid fa-robot"></i> Llama 3 / Mistral</li>
+            <li><i class="fa-solid fa-cubes"></i> HuggingFace</li>
+            <li><i class="fa-solid fa-link-slash"></i> LangChain</li>
+            <li><i class="fa-solid fa-cube"></i> FAISS / ChromaDB</li>
+            <li><i class="fa-solid fa-file-pdf"></i> pdfminer.six</li>
+            <li><i class="fa-solid fa-microchip"></i> Ollama (local)</li>
+            <li><i class="fa-solid fa-comment-dots"></i> SSE Streaming</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="images/logo_KE.png" alt="Khmer Enterprise" class="footer-logo-img" onerror="this.style.display='none'"/>
+          <span>Khmer Enterprise</span>
+        </div>
+        <p>Ecosystem Support System · Cambodia Entrepreneurship Initiative</p>
+      </div>
+      <div class="footer-right">
+        <span class="ft-badge"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+        <span class="ft-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
+        <span class="ft-badge"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

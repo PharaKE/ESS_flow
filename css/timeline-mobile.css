@@ -1,0 +1,500 @@
+/* ============================================================
+   ESS Timeline — timeline-mobile.css
+   Mobile & Cross-device Responsive Patch
+   Add this AFTER timeline.css in <head>
+   ============================================================ */
+
+/* ══════════════════════════════════════════════════════════
+   BASE CONTAINER & SECTION PADDING
+══════════════════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+@media (min-width: 480px)  { .container { padding: 0 20px; } }
+@media (min-width: 640px)  { .container { padding: 0 28px; } }
+@media (min-width: 1024px) { .container { padding: 0 36px; } }
+
+.tl-section {
+  padding: 32px 0 48px;
+}
+@media (min-width: 640px) { .tl-section { padding: 44px 0 60px; } }
+@media (min-width: 1024px) { .tl-section { padding: 52px 0 64px; } }
+
+/* ══════════════════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════════════════ */
+.site-header .header-inner {
+  padding: 0 16px;
+}
+@media (min-width: 640px) { .site-header .header-inner { padding: 0 24px; } }
+
+/* Hide badge text on small screens, show icon only */
+.header-badge {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header-badge {
+    display: inline-flex;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PAGE TABS
+══════════════════════════════════════════════════════════ */
+.page-tabs {
+  top: 56px; /* adjust if header height changes on mobile */
+}
+@media (min-width: 640px) { .page-tabs { top: 64px; } }
+
+.ptab {
+  padding: 12px 14px;
+  font-size: 0.75rem;
+}
+@media (min-width: 480px) { .ptab { padding: 14px 18px; font-size: 0.8rem; } }
+
+/* ══════════════════════════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════════════════════════ */
+.tl-hero {
+  margin-bottom: 32px;
+  padding: 0 4px;
+}
+@media (min-width: 640px) { .tl-hero { margin-bottom: 44px; } }
+@media (min-width: 1024px) { .tl-hero { margin-bottom: 52px; } }
+
+.tl-hero h2 {
+  font-size: clamp(1.3rem, 5vw, 2.2rem);
+}
+
+.tl-hero p {
+  font-size: clamp(0.78rem, 2.2vw, 0.88rem);
+}
+
+/* ══════════════════════════════════════════════════════════
+   STATS ROW
+══════════════════════════════════════════════════════════ */
+.tl-stats {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+@media (min-width: 480px) { .tl-stats { gap: 12px; } }
+@media (min-width: 640px) {
+  .tl-stats {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 36px;
+  }
+}
+@media (min-width: 1024px) { .tl-stats { margin-bottom: 44px; } }
+
+.tl-stat {
+  padding: 14px 12px;
+}
+@media (min-width: 640px) { .tl-stat { padding: 18px 16px; } }
+
+.tl-stat-n {
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
+}
+
+/* ══════════════════════════════════════════════════════════
+   OVERALL PROGRESS BAR
+══════════════════════════════════════════════════════════ */
+.tl-progress-wrap {
+  padding: 16px 16px;
+  margin-bottom: 28px;
+}
+@media (min-width: 640px) {
+  .tl-progress-wrap {
+    padding: 22px 24px;
+    margin-bottom: 36px;
+  }
+}
+@media (min-width: 1024px) { .tl-progress-wrap { margin-bottom: 44px; } }
+
+/* Milestone dot labels — hide some on small screens to avoid overlap */
+@media (max-width: 400px) {
+  .pm-dot-label {
+    font-size: 0.5rem;
+  }
+  /* Hide middle labels on tiny screens */
+  .pm-dot:nth-child(3) .pm-dot-label,
+  .pm-dot:nth-child(4) .pm-dot-label {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .pm-dot-label { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DEADLINE BANNER
+══════════════════════════════════════════════════════════ */
+.deadline-banner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 16px;
+  margin-bottom: 36px;
+}
+@media (min-width: 560px) {
+  .deadline-banner {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 20px;
+  }
+}
+@media (min-width: 768px) {
+  .deadline-banner {
+    padding: 22px 24px;
+    margin-bottom: 52px;
+  }
+}
+
+.db-countdown {
+  margin-left: 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+@media (min-width: 560px) {
+  .db-countdown {
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+.dbc-item {
+  min-width: 52px;
+  padding: 8px 10px;
+}
+@media (min-width: 480px) {
+  .dbc-item { min-width: 58px; padding: 10px 14px; }
+}
+
+.dbc-n {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+/* ══════════════════════════════════════════════════════════
+   TIMELINE — VERTICAL SPINE + ITEMS
+══════════════════════════════════════════════════════════ */
+
+/* On mobile: move spine to left edge */
+.tl-timeline::before {
+  left: 20px;
+}
+@media (min-width: 701px) {
+  .tl-timeline::before { left: 50%; }
+}
+
+/* All items stack to the right of the left-side spine on mobile */
+.tl-item {
+  flex-direction: row !important;
+  gap: 0;
+  padding-left: 0;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+@media (min-width: 701px) {
+  .tl-item { margin-bottom: 36px; }
+  .tl-item.tl-left  { flex-direction: row-reverse !important; }
+  .tl-item.tl-right { flex-direction: row !important; }
+}
+
+/* On mobile, hide the spacer div (flex:1) that pushes left items */
+.tl-item > div[style*="flex:1"] {
+  display: none;
+}
+@media (min-width: 701px) {
+  .tl-item > div[style*="flex:1"] { display: block; }
+}
+
+/* Node positioning on mobile */
+.tl-node {
+  width: 40px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+@media (min-width: 480px) { .tl-node { width: 48px; } }
+
+.tl-node-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 0.85rem;
+}
+@media (min-width: 480px) {
+  .tl-node-icon { width: 44px; height: 44px; font-size: 1rem; }
+}
+
+/* Card: full width on mobile, half on desktop */
+.tl-card {
+  max-width: none;
+  flex: 1;
+  padding: 14px 14px;
+  min-width: 0; /* prevent flex overflow */
+}
+@media (min-width: 480px) { .tl-card { padding: 16px 18px; } }
+@media (min-width: 701px) {
+  .tl-card {
+    max-width: calc(50% - 28px);
+    padding: 20px 22px;
+  }
+}
+
+/* Arrow pointer — always point left on mobile */
+.tl-item.tl-left .tl-card::before,
+.tl-item.tl-right .tl-card::before {
+  left: -8px;
+  right: auto;
+  top: 14px;
+  border-right: none;
+  border-top: none;
+  border-left: 1.5px solid rgba(26,107,181,0.09);
+  border-bottom: 1.5px solid rgba(26,107,181,0.09);
+  transform: rotate(45deg);
+}
+@media (min-width: 701px) {
+  /* Restore right-side arrow for tl-left items on desktop */
+  .tl-item.tl-left .tl-card::before {
+    right: -8px;
+    left: auto;
+    border-left: none;
+    border-bottom: none;
+    border-right: 1.5px solid rgba(26,107,181,0.09);
+    border-top: 1.5px solid rgba(26,107,181,0.09);
+  }
+}
+
+/* Card text sizes — slightly larger on mobile for readability */
+.tl-card h3 {
+  font-size: clamp(0.85rem, 2.5vw, 0.97rem);
+}
+.tl-card > p {
+  font-size: clamp(0.74rem, 2vw, 0.79rem);
+}
+
+/* Deliverable pills wrap tightly on mobile */
+.tl-deliverables {
+  gap: 4px;
+}
+.tl-del {
+  font-size: 0.65rem;
+  padding: 2px 7px;
+}
+@media (min-width: 480px) {
+  .tl-del { font-size: 0.68rem; padding: 3px 9px; }
+}
+
+/* Mini bar */
+.tl-mini-bar {
+  margin-top: 10px;
+  gap: 6px;
+}
+.tmb-label {
+  font-size: 0.6rem;
+}
+
+/* Phase badge */
+.tl-phase-badge {
+  margin: 24px 0 16px;
+}
+@media (min-width: 701px) { .tl-phase-badge { margin: 32px 0 20px; } }
+
+.tl-phase-badge-inner {
+  font-size: 0.68rem;
+  padding: 6px 14px;
+}
+@media (min-width: 480px) { .tl-phase-badge-inner { font-size: 0.72rem; } }
+
+/* ══════════════════════════════════════════════════════════
+   GANTT CHART
+══════════════════════════════════════════════════════════ */
+.gantt-section { margin-bottom: 36px; }
+@media (min-width: 640px) { .gantt-section { margin-bottom: 52px; } }
+
+.gantt-hd h3 { font-size: clamp(0.9rem, 3vw, 1.1rem); }
+
+/* Gantt is scrollable — improve scroll UX on mobile */
+.gantt-wrap {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+/* Add a subtle "scroll hint" shadow on right edge */
+.gantt-wrap::after {
+  content: '';
+  position: sticky;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.85));
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Reduce label column on small screens */
+.gantt-months,
+.gantt-row {
+  grid-template-columns: 90px repeat(14, 1fr);
+  min-width: 620px;
+}
+@media (min-width: 480px) {
+  .gantt-months,
+  .gantt-row {
+    grid-template-columns: 110px repeat(14, 1fr);
+    min-width: 680px;
+  }
+}
+@media (min-width: 768px) {
+  .gantt-months,
+  .gantt-row {
+    grid-template-columns: 140px repeat(14, 1fr);
+    min-width: 700px;
+  }
+}
+
+.gr-name {
+  padding: 6px 8px;
+  font-size: 0.68rem;
+}
+@media (min-width: 480px) { .gr-name { font-size: 0.74rem; padding: 8px 10px; } }
+
+.gr-name > span {
+  font-size: 0.6rem;
+}
+
+.gantt-bar {
+  font-size: 0.55rem;
+  height: 18px;
+  padding: 0 6px;
+}
+@media (min-width: 480px) { .gantt-bar { font-size: 0.6rem; height: 22px; padding: 0 9px; } }
+
+.gm-month {
+  font-size: 0.58rem;
+  padding: 6px 2px;
+}
+@media (min-width: 480px) { .gm-month { font-size: 0.65rem; } }
+
+.gm-week {
+  font-size: 0.48rem;
+}
+@media (min-width: 480px) { .gm-week { font-size: 0.55rem; } }
+
+/* ══════════════════════════════════════════════════════════
+   WBS CARDS
+══════════════════════════════════════════════════════════ */
+.wbs-section { margin-bottom: 36px; }
+@media (min-width: 640px) { .wbs-section { margin-bottom: 52px; } }
+
+.wbs-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 480px) {
+  .wbs-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+@media (min-width: 900px) {
+  .wbs-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.wbs-card-hd {
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+@media (min-width: 480px) { .wbs-card-hd { padding: 16px 18px 14px; } }
+
+.wbs-ico {
+  width: 34px;
+  height: 34px;
+  font-size: 0.82rem;
+}
+@media (min-width: 480px) { .wbs-ico { width: 38px; height: 38px; font-size: 0.9rem; } }
+
+.wbs-card-hd-info h4 {
+  font-size: clamp(0.78rem, 2.2vw, 0.84rem);
+}
+
+.wbs-tasks {
+  padding: 12px 14px;
+  gap: 8px;
+}
+@media (min-width: 480px) { .wbs-tasks { padding: 14px 18px; gap: 9px; } }
+
+.wbs-task {
+  font-size: 0.73rem;
+}
+@media (min-width: 480px) { .wbs-task { font-size: 0.77rem; } }
+
+.wbs-card-footer {
+  padding: 8px 14px 12px;
+}
+@media (min-width: 480px) { .wbs-card-footer { padding: 10px 18px 14px; } }
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════ */
+.site-footer .footer-inner {
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+  padding: 20px 16px;
+}
+@media (min-width: 640px) {
+  .site-footer .footer-inner {
+    flex-direction: row;
+    text-align: left;
+    padding: 24px 28px;
+  }
+}
+
+.footer-right {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+@media (min-width: 640px) { .footer-right { justify-content: flex-end; } }
+
+.ft-badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BACK TO TOP BUTTON
+══════════════════════════════════════════════════════════ */
+.back-to-top {
+  bottom: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  font-size: 0.8rem;
+}
+@media (min-width: 640px) {
+  .back-to-top { bottom: 24px; right: 24px; width: 44px; height: 44px; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCROLL REVEAL — respect reduced motion preference
+══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .tl-item,
+  .wbs-card,
+  .progress-fill,
+  .tmb-fill,
+  .wbs-progress-fill,
+  .gantt-bar {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .tl-item { opacity: 1; transform: none; }
+  .wbs-card { opacity: 1; transform: none; }
+}
