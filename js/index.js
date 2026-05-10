@@ -40,7 +40,7 @@ document.querySelectorAll('.flow-step').forEach(step => {
 });
 
 // ── Flow Nav: Highlight Active Step on Scroll ─────────────────
-const moduleIds = ['home', 'auth', 'matching', 'sna', 'gei', 'chatbot', 'admin'];
+const moduleIds = ['home', 'auth', 'reports', 'sna', 'gei', 'chatbot', 'admin'];
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {

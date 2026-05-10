@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/timeline.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Khmer:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
@@ -75,9 +75,9 @@
       <div class="hero-left">
         <div class="hero-tag"><i class="fa-solid fa-sitemap"></i> System Architecture & Workflow</div>
         <h1>Ecosystem Support<br/><span class="hero-accent">System Workflow</span></h1>
-        <p>A comprehensive platform integrating SNA, GEI data analytics, AI-powered chatbot, and startup matchmaking — built on Vue 3, Node.js, and PostgreSQL.</p>
+        <p>A comprehensive platform integrating SNA, GEI data analytics, AI-powered chatbot, research library, and Kumu &amp; EDA tools — built with HTML/CSS/JS, Node.js, and PostgreSQL.</p>
         <div class="hero-pills">
-          <span class="pill pill-green"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+          <span class="pill pill-green"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
           <span class="pill pill-blue"><i class="fa-brands fa-node-js"></i> Node.js + Express</span>
           <span class="pill pill-dark"><i class="fa-solid fa-database"></i> PostgreSQL</span>
           <span class="pill pill-yellow"><i class="fa-brands fa-python"></i> Python ML</span>
@@ -89,7 +89,7 @@
           <div class="hs-div"></div>
           <div class="hs-item"><span class="hs-n">3</span><span class="hs-l">Cities</span></div>
           <div class="hs-div"></div>
-          <div class="hs-item"><span class="hs-n">25+</span><span class="hs-l">Tools</span></div>
+          <div class="hs-item"><span class="hs-n">20+</span><span class="hs-l">Tools</span></div>
           <div class="hs-div"></div>
           <div class="hs-item"><span class="hs-n">4</span><span class="hs-l">Reports</span></div>
         </div>
@@ -106,7 +106,7 @@
       <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
       <div class="flow-step" data-target="auth"><div class="fs-icon"><i class="fa-solid fa-lock"></i></div><span>Auth</span></div>
       <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
-      <div class="flow-step" data-target="matching"><div class="fs-icon"><i class="fa-solid fa-handshake"></i></div><span>Matching</span></div>
+      <div class="flow-step" data-target="reports"><div class="fs-icon"><i class="fa-solid fa-file-lines"></i></div><span>Reports</span></div>
       <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
       <div class="flow-step" data-target="sna"><div class="fs-icon"><i class="fa-solid fa-share-nodes"></i></div><span>SNA</span></div>
       <i class="fa-solid fa-chevron-right nav-arrow" aria-hidden="true"></i>
@@ -165,12 +165,12 @@
           <div class="tools-block">
             <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
             <div class="tb-chips">
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
-              <span class="chip ch-vue"><i class="fa-solid fa-bolt"></i> Vite</span>
-              <span class="chip ch-vue"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP / AOS.js</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML5</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-js"></i> Vanilla JS</span>
               <span class="chip ch-lib"><i class="fa-brands fa-font-awesome"></i> Font Awesome 6</span>
               <span class="chip ch-lib"><i class="fa-solid fa-font"></i> Poppins</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-language"></i> Noto Sans Khmer</span>
             </div>
           </div>
         </div>
@@ -184,12 +184,12 @@
           <div class="mod-icon-wrap mw-blue"><i class="fa-solid fa-lock"></i></div>
           <div class="mod-titles">
             <h2>Login &amp; Registration</h2>
-            <p>Authentication · Google OAuth 2.0 · JWT sessions</p>
+            <p>Authentication · bcrypt password hashing · PostgreSQL</p>
           </div>
           <div class="mod-badge mb-blue">Auth</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">Secure gateway supporting email/password registration and Google OAuth 2.0 single sign-on. JWT tokens manage sessions; all credential data is hashed via bcrypt and persisted in PostgreSQL.</p>
+          <p class="mod-desc">Secure gateway for platform access. Registration collects Full Name, Gender, Position/Occupation, Organization, and Password. Login uses Full Name + Password. All credentials are hashed via bcrypt and stored in PostgreSQL.</p>
 
           <div class="auth-diagram">
             <div class="ad-row ad-center">
@@ -201,19 +201,21 @@
                 <div class="ad-node ad-email"><i class="fa-solid fa-user-plus"></i> Register</div>
                 <div class="ad-vline-sm"></div>
                 <div class="ad-subs">
-                  <div class="ad-sub"><i class="fa-solid fa-envelope"></i> Email + Password</div>
-                  <div class="ad-sub"><i class="fa-solid fa-id-card"></i> Profile Setup</div>
-                  <div class="ad-sub"><i class="fa-solid fa-envelope-open-text"></i> Email Verify</div>
+                  <div class="ad-sub"><i class="fa-solid fa-id-card"></i> Full Name</div>
+                  <div class="ad-sub"><i class="fa-solid fa-venus-mars"></i> Gender</div>
+                  <div class="ad-sub"><i class="fa-solid fa-briefcase"></i> Position / Occupation</div>
+                  <div class="ad-sub"><i class="fa-solid fa-building"></i> Organization</div>
+                  <div class="ad-sub"><i class="fa-solid fa-lock"></i> Create Password</div>
                 </div>
               </div>
               <div class="ad-or-pill">OR</div>
               <div class="ad-branch">
-                <div class="ad-node ad-google"><i class="fa-brands fa-google"></i> Google OAuth</div>
+                <div class="ad-node ad-google"><i class="fa-solid fa-right-to-bracket"></i> Sign In</div>
                 <div class="ad-vline-sm"></div>
                 <div class="ad-subs">
-                  <div class="ad-sub"><i class="fa-brands fa-google"></i> Google Consent</div>
-                  <div class="ad-sub"><i class="fa-solid fa-id-badge"></i> Auto Profile Fill</div>
-                  <div class="ad-sub"><i class="fa-solid fa-circle-check"></i> Instant Access</div>
+                  <div class="ad-sub"><i class="fa-solid fa-id-card"></i> Full Name</div>
+                  <div class="ad-sub"><i class="fa-solid fa-key"></i> Password</div>
+                  <div class="ad-sub"><i class="fa-solid fa-circle-check"></i> Verify &amp; Access</div>
                 </div>
               </div>
             </div>
@@ -228,77 +230,47 @@
             <div class="tb-chips">
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Node.js + Express</span>
               <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-              <span class="chip ch-auth"><i class="fa-brands fa-google"></i> Google OAuth 2.0</span>
-              <span class="chip ch-auth"><i class="fa-solid fa-key"></i> JWT (jsonwebtoken)</span>
               <span class="chip ch-auth"><i class="fa-solid fa-shield"></i> bcrypt</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-envelope"></i> Nodemailer / SendGrid</span>
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue Router Guards</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- ── 03 Matching ── -->
-      <article class="mod-card reveal" id="matching">
+      <!-- ── 03 Reports & Research ── -->
+      <article class="mod-card reveal" id="reports">
         <div class="mod-accent accent-green"></div>
         <div class="mod-header">
           <div class="mod-num" aria-hidden="true">03</div>
-          <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-handshake"></i></div>
+          <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-file-lines"></i></div>
           <div class="mod-titles">
-            <h2>Startup Support Matching</h2>
-            <p>SNA-powered matchmaking · 2021 &amp; 2024 datasets</p>
+            <h2>Reports &amp; Research Library</h2>
+            <p>KE publications · SNA research · GEI reports · annual reports</p>
           </div>
-          <div class="mod-badge mb-green">Matching</div>
+          <div class="mod-badge mb-green">Knowledge</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">Users submit a structured business profile. An Express API endpoint processes the input through a Python scoring engine cross-referencing SNA 2021 &amp; 2024 datasets — returning best-fit ESOs, investors, peers, mentors, and programs.</p>
+          <p class="mod-desc">A centralized knowledge library hosting Khmer Enterprise's complete collection of annual reports, SNA research studies (2021 &amp; 2024), the Entrepreneurial Ecosystem Roadmap, and the Opinium Global Entrepreneurship Index 2025 — all available as downloadable PDFs with both English and Khmer editions.</p>
 
-          <div class="pipeline-row">
-            <div class="pr-step">
-              <div class="pr-ico pr-ico-green"><i class="fa-solid fa-file-pen"></i></div>
-              <div class="pr-lbl">User Input</div>
-              <div class="pr-sub">Sector · Stage · Location · Needs</div>
-            </div>
-            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
-            <div class="pr-step">
-              <div class="pr-ico pr-ico-blue"><i class="fa-solid fa-gears"></i></div>
-              <div class="pr-lbl">API Processing</div>
-              <div class="pr-sub">Express Route · Scoring Logic</div>
-            </div>
-            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
-            <div class="pr-step pr-step-active">
-              <div class="pr-ico pr-ico-darkgreen"><i class="fa-solid fa-share-nodes"></i></div>
-              <div class="pr-lbl">SNA Match</div>
-              <div class="pr-sub">NetworkX · 2021 + 2024</div>
-            </div>
-            <div class="pr-arr" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
-            <div class="pr-step">
-              <div class="pr-ico pr-ico-yellow"><i class="fa-solid fa-chart-bar"></i></div>
-              <div class="pr-lbl">Result Display</div>
-              <div class="pr-sub">Graph + Cards + Score</div>
-            </div>
-          </div>
-
-          <div class="output-label">Match Output Types</div>
+          <div class="output-label">Available Reports</div>
           <div class="output-grid">
-            <div class="og-item"><i class="fa-solid fa-building-user"></i><span>ESO Matches</span></div>
-            <div class="og-item"><i class="fa-solid fa-network-wired"></i><span>Network Nodes</span></div>
-            <div class="og-item"><i class="fa-solid fa-hand-holding-dollar"></i><span>Investors</span></div>
-            <div class="og-item"><i class="fa-solid fa-users-gear"></i><span>Peer Startups</span></div>
-            <div class="og-item"><i class="fa-solid fa-graduation-cap"></i><span>Mentors</span></div>
-            <div class="og-item"><i class="fa-solid fa-lightbulb"></i><span>Programs</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>EER Roadmap</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>KE Annual 2023 (EN)</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>KE Annual 2024 (EN)</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>KE Annual 2024 (KH)</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>SNA 2021</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>SNA 2024</span></div>
+            <div class="og-item"><i class="fa-solid fa-file-pdf"></i><span>Opinium GEI 2025</span></div>
           </div>
 
           <div class="tools-block">
             <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
             <div class="tb-chips">
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
               <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-              <span class="chip ch-python"><i class="fa-brands fa-python"></i> Python (NetworkX)</span>
-              <span class="chip ch-python"><i class="fa-solid fa-table"></i> Pandas</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-diagram-project"></i> D3.js Network</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
+              <span class="chip ch-api"><i class="fa-brands fa-google-drive"></i> Google Drive (PDF hosting)</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-language"></i> Noto Sans Khmer</span>
             </div>
           </div>
         </div>
@@ -317,7 +289,7 @@
           <div class="mod-badge mb-blue">Analytics</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">An interactive Vue dashboard mapping the entrepreneurship network across three Cambodian cities. Survey data flows through a multi-stage pipeline into live charts, geographic maps, and Kumu.io network visualizations.</p>
+          <p class="mod-desc">An interactive dashboard mapping the entrepreneurship network across three Cambodian cities. Survey data flows through a multi-stage pipeline into live charts, geographic maps, and Kumu.io network visualizations. Includes separate Kumu &amp; EDA module with embedded maps and exploratory data analysis notebook.</p>
 
           <div class="pipeline-vert">
             <div class="pv-row">
@@ -354,9 +326,9 @@
               <div class="pv-dot pv-darkblue pv-active-dot"></div>
               <div class="pv-card pv-card-highlight">
                 <span class="pv-step-tag pv-step-active">Step 4 · Output</span>
-                <h4><i class="fa-solid fa-chart-area pv-icon-darkblue"></i> Web Visualization</h4>
-                <p>Vue 3 dashboard with network graph, choropleth maps, key findings panel, and Kumu.io API embed</p>
-                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span><span>Kumu.io API</span><span>D3.js</span></div>
+                <h4><i class="fa-solid fa-chart-area pv-icon-darkblue"></i> Web Visualization + Kumu &amp; EDA</h4>
+                <p>Interactive dashboard with network graph, choropleth maps, findings panel, plus embedded Kumu.io maps and Google Colab EDA notebook</p>
+                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span><span>Kumu.io API</span></div>
               </div>
             </div>
           </div>
@@ -370,7 +342,7 @@
           <div class="tools-block">
             <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
             <div class="tb-chips">
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
               <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
               <span class="chip ch-python"><i class="fa-solid fa-table-cells"></i> Power Query</span>
@@ -378,7 +350,7 @@
               <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
               <span class="chip ch-lib"><i class="fa-solid fa-map-location-dot"></i> Leaflet.js</span>
               <span class="chip ch-api"><i class="fa-solid fa-plug"></i> Kumu.io API</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-diagram-project"></i> D3.js</span>
+              <span class="chip ch-api"><i class="fa-solid fa-flask"></i> Google Colab (EDA)</span>
             </div>
           </div>
         </div>
@@ -397,7 +369,7 @@
           <div class="mod-badge mb-yellow">Analytics</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">Visualizes Cambodia's GEI rankings and sub-index performance sourced from the Opinium 2025 report. Data is scraped, cleaned, and processed through a Python pipeline before being served via Express API to a Vue dashboard.</p>
+          <p class="mod-desc">Visualizes Cambodia's GEI rankings and sub-index performance sourced from the Opinium 2025 report. Data is scraped, cleaned, and processed through a Python pipeline before being served via Express API to an interactive dashboard.</p>
 
           <div class="pipeline-vert">
             <div class="pv-row">
@@ -436,7 +408,7 @@
                 <span class="pv-step-tag pv-step-active">Step 4 · Output</span>
                 <h4><i class="fa-solid fa-earth-asia pv-icon-darkgreen"></i> Dashboard Visualization</h4>
                 <p>Country ranking maps, radar charts for sub-indices, trend lines, and Cambodia spotlight panel</p>
-                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span><span>Vue 3</span></div>
+                <div class="pv-tags"><span>Chart.js</span><span>Leaflet.js</span></div>
               </div>
             </div>
           </div>
@@ -450,7 +422,7 @@
               <span class="chip ch-python"><i class="fa-brands fa-python"></i> Pandas / NumPy</span>
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express API</span>
               <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
               <span class="chip ch-lib"><i class="fa-solid fa-chart-bar"></i> Chart.js</span>
               <span class="chip ch-lib"><i class="fa-solid fa-map"></i> Leaflet.js</span>
             </div>
@@ -466,12 +438,12 @@
           <div class="mod-icon-wrap mw-green"><i class="fa-solid fa-robot"></i></div>
           <div class="mod-titles">
             <h2>AI Chatbot System</h2>
-            <p>RAG-powered · fine-tuned on Khmer Enterprise research corpus</p>
+            <p>RAG-powered · Groq API (Llama 3 70B) · Ollama for local testing</p>
           </div>
           <div class="mod-badge mb-green">AI / LLM</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">An intelligent assistant answering startup and ecosystem questions grounded in Khmer Enterprise's published reports. Uses Retrieval-Augmented Generation (RAG) so every response is sourced from authoritative documents.</p>
+          <p class="mod-desc">An intelligent assistant answering startup and ecosystem questions grounded in Khmer Enterprise's published reports. Uses Retrieval-Augmented Generation (RAG) via HuggingFace models and Groq API (Llama 3 70B) for production, with Ollama used for local development testing.</p>
 
           <div class="rag-layout">
             <div class="rag-sources">
@@ -519,16 +491,16 @@
                 <div class="rag-sb">
                   <h5><i class="fa-solid fa-brain"></i> LLM Generation (RAG)</h5>
                   <p>Retrieve top-k context chunks → inject into prompt → stream response with citations</p>
-                  <div class="rag-tags"><span>Llama 3 / Mistral</span><span>Ollama</span></div>
+                  <div class="rag-tags"><span>Groq API</span><span>Llama 3 70B</span><span>Ollama (testing)</span></div>
                 </div>
               </div>
               <div class="rag-conn"></div>
               <div class="rag-step">
                 <div class="rag-sn">5</div>
                 <div class="rag-sb">
-                  <h5><i class="fa-solid fa-comment-dots"></i> Chat UI (Vue)</h5>
+                  <h5><i class="fa-solid fa-comment-dots"></i> Chat UI</h5>
                   <p>Streaming chat interface with source citations and conversation history</p>
-                  <div class="rag-tags"><span>Vue 3</span><span>SSE Streaming</span></div>
+                  <div class="rag-tags"><span>HTML/CSS/JS</span><span>SSE Streaming</span></div>
                 </div>
               </div>
             </div>
@@ -537,14 +509,13 @@
           <div class="tools-block">
             <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
             <div class="tb-chips">
-              <span class="chip ch-ai"><i class="fa-solid fa-brain"></i> Llama 3 / Mistral</span>
+              <span class="chip ch-ai"><i class="fa-solid fa-brain"></i> Llama 3 70B (Groq)</span>
               <span class="chip ch-ai"><i class="fa-solid fa-robot"></i> HuggingFace Transformers</span>
               <span class="chip ch-ai"><i class="fa-solid fa-link-slash"></i> LangChain (RAG)</span>
               <span class="chip ch-ai"><i class="fa-solid fa-cube"></i> FAISS / ChromaDB</span>
-              <span class="chip ch-python"><i class="fa-solid fa-file-pdf"></i> pdfminer.six</span>
-              <span class="chip ch-python"><i class="fa-solid fa-microchip"></i> Ollama (local LLM)</span>
+              <span class="chip ch-python"><i class="fa-solid fa-microchip"></i> Ollama (local testing)</span>
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express (API proxy)</span>
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3 (Chat UI)</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS (Chat UI)</span>
             </div>
           </div>
         </div>
@@ -558,51 +529,51 @@
           <div class="mod-icon-wrap mw-dark"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="mod-titles">
             <h2>Admin Control Panel</h2>
-            <p>User management · data control · logs · AI model manager</p>
+            <p>User management · data control · logs · link manager · chatbot API</p>
           </div>
           <div class="mod-badge mb-dark">Admin</div>
         </div>
         <div class="mod-body">
-          <p class="mod-desc">A restricted, role-protected panel for administrators. Manage all platform components — users, datasets, AI models — and audit every action with full IP and session logging.</p>
+          <p class="mod-desc">A restricted admin panel for managing all platform components. Control GEI and SNA datasets in PostgreSQL, manage registered users, review login logs, configure Groq API settings for the chatbot, manage Kumu/EDA external links (Kumu maps, Google Colab, Looker Studio), update research PDF links in Google Drive, and monitor chatbot conversation history.</p>
 
           <div class="admin-grid">
             <div class="ag-feat">
               <div class="ag-ico ag-green"><i class="fa-solid fa-users-cog"></i></div>
-              <div class="ag-text"><h5>User Management</h5><p>View, edit, disable or delete accounts. Role assignment and RBAC permission control.</p></div>
+              <div class="ag-text"><h5>User Management</h5><p>View, edit, disable or delete registered user accounts. Manage roles and permissions.</p></div>
             </div>
             <div class="ag-feat">
               <div class="ag-ico ag-blue"><i class="fa-solid fa-table-cells-large"></i></div>
-              <div class="ag-text"><h5>Dataset Manager</h5><p>Upload new GEI / SNA datasets, trigger reprocessing pipelines, monitor data health.</p></div>
+              <div class="ag-text"><h5>GEI &amp; SNA Data Management</h5><p>Upload new GEI / SNA datasets directly to PostgreSQL, trigger data refresh, monitor data health.</p></div>
             </div>
             <div class="ag-feat">
-              <div class="ag-ico ag-yellow"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-              <div class="ag-text"><h5>Matching Log Tracker</h5><p>Review all startup matching submissions with timestamps, inputs, and result snapshots.</p></div>
+              <div class="ag-ico ag-yellow"><i class="fa-solid fa-link"></i></div>
+              <div class="ag-text"><h5>Kumu &amp; EDA Link Manager</h5><p>Update external links for Kumu maps (Overall, Phnom Penh, Siem Reap, Battambang), Google Colab notebook, and Looker Studio dashboard.</p></div>
             </div>
             <div class="ag-feat">
-              <div class="ag-ico ag-darkblue"><i class="fa-solid fa-scroll"></i></div>
-              <div class="ag-text"><h5>Activity &amp; Access Logs</h5><p>Track user sessions, IP addresses, page visits, and system events. Export as CSV.</p></div>
+              <div class="ag-ico ag-darkblue"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="ag-text"><h5>Research &amp; Report Manager</h5><p>Add, update, or remove PDF report links from Google Drive. Manage all 7 publications in the reports library.</p></div>
             </div>
             <div class="ag-feat">
-              <!-- FIXED: fa-microchip-ai doesn't exist in FA 6.5 — replaced with fa-brain + fa-microchip combo -->
-              <div class="ag-ico ag-darkgreen"><i class="fa-solid fa-brain"></i></div>
-              <div class="ag-text"><h5>AI Model Manager</h5><p>Upload fine-tuned models, swap active chatbot version, monitor performance metrics.</p></div>
+              <div class="ag-ico ag-darkgreen"><i class="fa-solid fa-robot"></i></div>
+              <div class="ag-text"><h5>Chatbot API Configuration</h5><p>Manage Groq API keys, switch between models, view chatbot conversation history and usage analytics.</p></div>
             </div>
             <div class="ag-feat">
-              <div class="ag-ico ag-green"><i class="fa-solid fa-bell"></i></div>
-              <div class="ag-text"><h5>Notifications</h5><p>Platform announcements, maintenance scheduling, and system-wide alerts.</p></div>
+              <div class="ag-ico ag-green"><i class="fa-solid fa-scroll"></i></div>
+              <div class="ag-text"><h5>Login Activity Logs</h5><p>Track user login history, timestamps, and session activity. Export logs as CSV for auditing.</p></div>
             </div>
           </div>
 
           <div class="tools-block">
             <div class="tb-label"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Stack</div>
             <div class="tb-chips">
-              <span class="chip ch-vue"><i class="fa-brands fa-vuejs"></i> Vue 3 (Admin UI)</span>
+              <span class="chip ch-vue"><i class="fa-brands fa-html5"></i> HTML/CSS/JS (Admin UI)</span>
               <span class="chip ch-node"><i class="fa-brands fa-node-js"></i> Express + Middleware</span>
               <span class="chip ch-db"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-              <span class="chip ch-auth"><i class="fa-solid fa-shield"></i> RBAC (role-based)</span>
+              <span class="chip ch-auth"><i class="fa-solid fa-shield"></i> bcrypt (auth)</span>
               <span class="chip ch-lib"><i class="fa-solid fa-chart-line"></i> Chart.js (analytics)</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-rotate"></i> Bull / BullMQ</span>
-              <span class="chip ch-lib"><i class="fa-solid fa-file-export"></i> csv-writer</span>
+              <span class="chip ch-api"><i class="fa-solid fa-cloud"></i> Groq API</span>
+              <span class="chip ch-api"><i class="fa-brands fa-google-drive"></i> Google Drive API</span>
+              <span class="chip ch-lib"><i class="fa-solid fa-file-export"></i> CSV export</span>
             </div>
           </div>
         </div>
@@ -622,30 +593,27 @@
       </div>
       <div class="ts-grid">
         <div class="ts-col">
-          <div class="ts-col-hd ts-green"><i class="fa-brands fa-vuejs"></i> Frontend (Vue 3)</div>
+          <div class="ts-col-hd ts-green"><i class="fa-brands fa-html5"></i> Frontend</div>
           <ul>
-            <li><i class="fa-brands fa-vuejs"></i> Vue 3 + Composition API</li>
-            <li><i class="fa-solid fa-bolt"></i> Vite (Build tool)</li>
-            <li><i class="fa-solid fa-wind"></i> Tailwind CSS</li>
+            <li><i class="fa-brands fa-html5"></i> HTML5</li>
+            <li><i class="fa-brands fa-css3-alt"></i> CSS3 (Custom Properties)</li>
+            <li><i class="fa-brands fa-js"></i> Vanilla JavaScript</li>
             <li><i class="fa-solid fa-chart-bar"></i> Chart.js</li>
             <li><i class="fa-solid fa-map"></i> Leaflet.js</li>
-            <li><i class="fa-solid fa-diagram-project"></i> D3.js</li>
-            <li><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP / AOS.js</li>
-            <li><i class="fa-solid fa-route"></i> Vue Router</li>
-            <li><i class="fa-solid fa-box"></i> Pinia (state)</li>
+            <li><i class="fa-brands fa-font-awesome"></i> Font Awesome 6</li>
+            <li><i class="fa-solid fa-font"></i> Poppins</li>
+            <li><i class="fa-solid fa-language"></i> Noto Sans Khmer</li>
           </ul>
         </div>
         <div class="ts-col">
-          <div class="ts-col-hd ts-blue"><i class="fa-brands fa-node-js"></i> Backend (Node.js)</div>
+          <div class="ts-col-hd ts-blue"><i class="fa-brands fa-node-js"></i> Backend</div>
           <ul>
             <li><i class="fa-brands fa-node-js"></i> Node.js + Express</li>
             <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
-            <li><i class="fa-solid fa-link"></i> pg / Sequelize ORM</li>
-            <li><i class="fa-solid fa-key"></i> JWT + bcrypt</li>
-            <li><i class="fa-brands fa-google"></i> Google OAuth 2.0</li>
-            <li><i class="fa-solid fa-rotate"></i> Bull / BullMQ</li>
-            <li><i class="fa-solid fa-envelope"></i> Nodemailer</li>
+            <li><i class="fa-solid fa-link"></i> pg (node-postgres)</li>
+            <li><i class="fa-solid fa-shield"></i> bcrypt (password hashing)</li>
             <li><i class="fa-solid fa-plug"></i> REST API (JSON)</li>
+            <li><i class="fa-solid fa-file-export"></i> CSV export endpoints</li>
           </ul>
         </div>
         <div class="ts-col">
@@ -657,18 +625,19 @@
             <li><i class="fa-solid fa-spider"></i> Scrapy + BS4</li>
             <li><i class="fa-solid fa-chart-area"></i> Matplotlib / Seaborn</li>
             <li><i class="fa-solid fa-plug"></i> Kumu.io API</li>
+            <li><i class="fa-solid fa-flask"></i> Google Colab (EDA)</li>
             <li><i class="fa-solid fa-file-export"></i> CSV / JSON export</li>
           </ul>
         </div>
         <div class="ts-col">
           <div class="ts-col-hd ts-darkblue"><i class="fa-solid fa-brain"></i> AI / LLM (RAG)</div>
           <ul>
-            <li><i class="fa-solid fa-robot"></i> Llama 3 / Mistral</li>
+            <li><i class="fa-solid fa-cloud"></i> Groq API</li>
+            <li><i class="fa-solid fa-brain"></i> Llama 3 70B</li>
             <li><i class="fa-solid fa-cubes"></i> HuggingFace</li>
             <li><i class="fa-solid fa-link-slash"></i> LangChain</li>
             <li><i class="fa-solid fa-cube"></i> FAISS / ChromaDB</li>
-            <li><i class="fa-solid fa-file-pdf"></i> pdfminer.six</li>
-            <li><i class="fa-solid fa-microchip"></i> Ollama (local)</li>
+            <li><i class="fa-solid fa-microchip"></i> Ollama (local testing)</li>
             <li><i class="fa-solid fa-comment-dots"></i> SSE Streaming</li>
           </ul>
         </div>
@@ -689,7 +658,7 @@
         <p>Ecosystem Support System · Cambodia Entrepreneurship Initiative</p>
       </div>
       <div class="footer-right">
-        <span class="ft-badge"><i class="fa-brands fa-vuejs"></i> Vue 3</span>
+        <span class="ft-badge"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
         <span class="ft-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
         <span class="ft-badge"><i class="fa-solid fa-database"></i> PostgreSQL</span>
       </div>
